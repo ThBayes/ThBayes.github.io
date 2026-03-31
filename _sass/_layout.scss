@@ -1,0 +1,91 @@
+/******************************************************************************
+ * Content
+ ******************************************************************************/
+
+body {
+  padding-bottom: 160px;
+  color: var(--global-text-color);
+  background-color: var(--global-bg-color);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    scroll-margin-top: 66px;
+  }
+}
+
+body.fixed-top-nav {
+  // Add some padding for the nav-bar.
+  padding-top: 56px;
+}
+
+body.sticky-bottom-footer {
+  // Remove padding below footer.
+  padding-bottom: 0;
+}
+
+.container {
+  max-width: $max-content-width;
+}
+
+// Profile
+.profile {
+  img {
+    width: 100%;
+  }
+}
+
+
+.fixed-bottom-socials {
+  position: fixed !important;
+  bottom: 0 !important; // Sits right at the bottom edge
+  left: 0;
+  width: 100%;
+  z-index: 9999 !important; 
+  pointer-events: none;     
+  text-align: center;       
+
+  .social {
+    display: inline-block;
+    pointer-events: auto;   
+    margin: 0;
+    
+    background-color: var(--global-bg-color); 
+    border-top: 1px solid var(--global-divider-color); 
+    padding: 10px 20px;
+    width: 100%; 
+    
+    .contact-icons {
+      font-size: 1.5rem !important; 
+
+      a {
+        margin: 0 12px;
+        
+        i::before {
+          color: var(--global-text-color) !important; 
+        }
+
+        &:hover i::before {
+          color: var(--global-theme-color) !important; 
+        }
+      }
+    }
+  }
+}
+
+// TODO: redefine content layout.
+
+/******************************************************************************
+ * Publications
+ ******************************************************************************/
+
+// TODO: redefine publications layout.
+
+/*****************************************************************************
+* Projects
+*****************************************************************************/
+
+// TODO: redefine projects layout.

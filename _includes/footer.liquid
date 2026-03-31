@@ -1,0 +1,33 @@
+{% capture social_icons %}
+  {% if page.social %}
+    <div class="social">
+      <div class="contact-icons">{% include social.liquid %}</div>
+    </div>
+  {% endif %}
+{% endcapture %}
+
+{% capture footer_text_only %}
+  &copy; Copyright {{ site.time | date: '%Y' }}
+  {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}. 
+  {{ site.footer_text }}
+  {% if site.impressum_path %}
+    <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
+  {% endif %}
+  {% if site.last_updated %}
+    <br>Last updated: {{ 'now' | date: '%B %d, %Y' }}.
+  {% endif %}
+{% endcapture %}
+
+<div class="fixed-bottom-socials">
+  {{ social_icons }}
+</div>
+
+{% if site.footer_fixed %}
+  <footer class="fixed-bottom" role="contentinfo" style="border-top: none;">
+    <div class="container mt-0">{{ footer_text_only }}</div>
+  </footer>
+{% else %}
+  <footer class="sticky-bottom mt-0" role="contentinfo" style="border-top: none; padding-bottom: 80px;">
+    <div class="container">{{ footer_text_only }}</div>
+  </footer>
+{% endif %}
